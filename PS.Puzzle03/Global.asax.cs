@@ -3,6 +3,7 @@ using System.Web.Http;
 using Autofac;
 using Autofac.Integration.WebApi;
 using PS.Puzzle03.Domain;
+using PS.Puzzle03.Models;
 
 namespace PS.Puzzle03
 {
@@ -13,6 +14,7 @@ namespace PS.Puzzle03
             GlobalConfiguration.Configure(WebApiConfig.Register);
 
             var builder = new ContainerBuilder();
+            builder.RegisterType<ServiceCentreJSONRepository>().As<IRepository<ServiceCentre>>();
 
             // Get your HttpConfiguration.
             var config = GlobalConfiguration.Configuration;
