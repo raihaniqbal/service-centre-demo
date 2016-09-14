@@ -19,7 +19,10 @@ namespace PS.Puzzle03.Controllers
         [HttpGet]
         public IEnumerable<ServiceCentre> GetNearby(double latitude, double longitude)
         {
-           throw new NotImplementedException();
+            return _serviceCentreService.GetNearby(new MapLocation {
+                Latitude = latitude,
+                Longitude = longitude
+            });
         }
     }
 }
