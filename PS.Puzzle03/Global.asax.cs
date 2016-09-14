@@ -14,7 +14,9 @@ namespace PS.Puzzle03
             GlobalConfiguration.Configure(WebApiConfig.Register);
 
             var builder = new ContainerBuilder();
-            builder.RegisterType<ServiceCentreJSONRepository>().As<IRepository<ServiceCentre>>();
+            //builder.RegisterInstance<IRepository<ServiceCentre>>(new ServiceCentreJSONRepository());
+            builder.RegisterType<ServiceCentreJSONRepository>().As<IRepository<ServiceCentre>>().InstancePerRequest();
+            builder.RegisterType<ServiceCentreService>().As<IServiceCentreService>().InstancePerRequest();
 
             // Get your HttpConfiguration.
             var config = GlobalConfiguration.Configuration;

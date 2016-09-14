@@ -13,7 +13,7 @@ namespace PS.Puzzle03.Models
         {
             get
             {
-                string path = String.Format(@"{0}\Data\serviceCentres.json", Environment.CurrentDirectory);
+                string path = String.Format(@"{0}\Data\serviceCentres.json", HttpContext.Current.Request.PhysicalApplicationPath);
                 return JsonConvert.DeserializeObject<IEnumerable<ServiceCentre>>(File.ReadAllText(path));
             }
         }
