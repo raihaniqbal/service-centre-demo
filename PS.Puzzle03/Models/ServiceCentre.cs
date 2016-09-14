@@ -1,7 +1,17 @@
-﻿namespace PS.Puzzle03.Models
+﻿using System;
+
+namespace PS.Puzzle03.Models
 {
-    public class ServiceCentre
+    public class ServiceCentre : IEntity
     {
+        public Guid id
+        {
+            get
+            {
+                return new Guid();
+            }
+        }
+
         public string Name { get; set; }
         public string ImageUrl { get; set; }
         public string Phone { get; set; }

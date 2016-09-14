@@ -1,4 +1,5 @@
-﻿using Xunit;
+﻿using PS.Puzzle03.Models;
+using Xunit;
 
 namespace PS.Puzzle03.Tests.Domain
 {
@@ -7,6 +8,8 @@ namespace PS.Puzzle03.Tests.Domain
         [Fact]
         public void Test1()
         {
+            ServiceCentreJSONRepository repo = new ServiceCentreJSONRepository();
+            Assert.NotEmpty(repo.List);
         }
     }
 }
